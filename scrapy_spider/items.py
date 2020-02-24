@@ -8,6 +8,19 @@
 import scrapy
 
 
-class QuoteItem(scrapy.Item):
-    author = scrapy.Field()
-    quote = scrapy.Field()
+class CrawlerItem(scrapy.Item):
+    page_url = scrapy.Field()
+    page_section = scrapy.Field()
+    page_type = scrapy.Field()
+    page_publication_date = scrapy.Field()
+    page_modification_date = scrapy.Field()
+    page_wordcount = scrapy.Field()
+    page_ext_links = scrapy.Field()
+
+    site_url = scrapy.Field()
+    site_id = scrapy.Field()
+
+
+
+
+

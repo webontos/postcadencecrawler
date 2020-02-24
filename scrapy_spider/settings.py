@@ -19,7 +19,7 @@ NEWSPIDER_MODULE = 'scrapy_spider.spiders'
 #USER_AGENT = 'scrapy_spider (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -87,14 +87,28 @@ ITEM_PIPELINES = {
 #HTTPCACHE_EXPIRATION_SECS = 0
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
+HTTPERROR_ALLOWED_CODES = [404]
+#RETRY_ENABLED = False
+DOWNLOAD_TIMEOUT = 15
+#REDIRECT_ENABLED = False
+
+
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-CONNECTION_STRING = "mysql://{user}:{passwd}@{host}:{port}/{db_name}?charset=utf8".format(
+CONNECTION_STRING2 = "mysql+mysqlconnector://{user}:{passwd}@{host}:{port}/{db_name}?charset=utf8".format(
     user="root",
-    passwd="start",
-    host="192.168.1.2",
+    passwd="nf@r!s2015",
+    host="localhost",
     port="3306",
-    db_name="quote_toscrape",
+    db_name="postcaesoftdata",
+)
+
+CONNECTION_STRING = "postgresql://{user}:{passwd}@{host}:{port}/{db_name}".format(
+    user="postgres",
+    passwd="Qf@r!s2015",
+    host="localhost",
+    port="5432",
+    db_name="postcadence",
 )
 
 
